@@ -1,28 +1,62 @@
 <html>
 		<style>
-select {
-  width: 100px;
-  overflow: hidden;
-  white-space: pre;
-  text-overflow: ellipsis;
-  -webkit-appearance: none;
-}
-  
-option {
-  border: solid 1px #DDDDDD;
-}
+      body {
+        font-family:"Josefin Sans",Helvetica Neue Light,Helvetica Neue,Arial,sans-serif;
+        color: #eee;
+        background-color: #2c3e50;
+        text-align: center;
+        font-weight: 300;
+        line-height: 1.5;
+      }
+      .select-wrapper {
+        display: block;
+        margin-bottom: 1em;
+      }
+      
+      select {
+        font-size: 1em;
+        border: 1px solid #eee;
+      }
+      
+      li {
+        list-style-position: inside
+      }
+      
 </style>
 <body>
 	<form>
 		
 
-
-<select name="d" class="myselect" multiple>
-  <option value="sdf" class="test1"> line text How to wrap the big line text </option>
-  <option value="sdf2" class="test1"> line text How to wrap the big line text </option>
-  <option value="sdf3" class="test1"> line text How to wrap the big line text </option>
-  <option value="sdf4" class="test1"> line text How to wrap the big line text </option>
-</select>
+    <h1>Fix long labels in IOS &lt;select&gt;</h1>
+    <p>
+      Check this page in IOS and see the difference between the two dropdowns.
+    </p>
+    <ul>
+      <li>In the first one, the values are cut to the edge of the screen.</li>
+      <li>In the second one, the values are fully displayed.</li>
+    </ul>
+    <p>
+      The magic behind this is the empty <strong>optgroup</strong> tag at the end of the options list.
+    </p>
+    <div class="select-wrapper">
+    <select>
+      <option>No fix</option>
+      <option>Grumpy wizards make toxic brew for the evil Queen and Jack</option>
+      <option>Quirky spud boys can jam after zapping five worthy Polysixes</option>
+      <option>The wizard quickly jinxed the gnomes before they vaporized</option>
+      <option>All questions asked by five watched experts amaze the judge</option>
+    </select>
+    </div>
+    <div class="select-wrapper">
+    <select>
+      <option>Fixed</option>
+      <option>Grumpy wizards make toxic brew for the evil Queen and Jack</option>
+      <option>Quirky spud boys can jam after zapping five worthy Polysixes</option>
+      <option>The wizard quickly jinxed the gnomes before they vaporized</option>
+      <option>All questions asked by five watched experts amaze the judgeAll questions asked by five watched experts amaze the judgeAll questions asked by five watched experts amaze the judgeAll questions asked by five watched experts amaze the judge</option>
+      <optgroup label=""></optgroup>
+    </select>
+    </div>
 	</form>
 
 </body>
